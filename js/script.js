@@ -1,4 +1,4 @@
 "use strict";
 
-const namee = "javniktool";
-alert(`${namee}, как твои дела?`);
+const namberOfFilms = prompt("сколько фильмов вы посмотрели?");
+console.log(namberOfFilms);
