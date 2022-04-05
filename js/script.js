@@ -1,7 +1,14 @@
 "use strict";
 
-const namberOfFilms = prompt("сколько фильмов вы посмотрели?");
-console.log(namberOfFilms);
+const namberOfFilms = +prompt("сколько фильмов вы посмотрели?", "");
+
+if(namberOfFilms > 50) {
+    console.log('вы киноман!');
+} else if (namberOfFilms < 50) {
+    console.log('просмотрено слишком мало фильмов');
+}else{
+    console.log('произошла ошибка');
+}
 
 const personalMovie = {
     count: namberOfFilms,
@@ -10,12 +17,22 @@ const personalMovie = {
     genres:[],
     private: false
 };
-const lastFilm = prompt("последний фильм,который вы посмотрели");
-const gradeOfFilms = prompt("оцените его по 10 бальной шкале");
 
-personalMovie.movies={
-        nameOfFilms: lastFilm,
-        grade: gradeOfFilms
-    };
 
-console.log(`${personalMovie.movies.nameOfFilms}:`,`${personalMovie.movies.grade}`);
+
+for (let i = 0; i < 2; i++){
+
+let a = prompt("последний фильм,который вы посмотрели", ""),
+    b = prompt("оцените его по 10 бальной шкале", "");    
+
+if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+  personalMovie.movies[a] = b;   
+ console.log(personalMovie.movies[a] + ': ' + personalMovie.movies[b]);    
+} else{
+i--
+}   
+}
+
+
+console.log(personalMovie);
+
